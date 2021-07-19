@@ -1,0 +1,14 @@
+crp	feaR	1
+crp	fis	1
+crp	hlyE	1
+crp	hupB	1
+crp	lpd	1
+crp	mtlA	1
+crp	pdhR	1
+fis	crp	1
+fis	hlyE	1
+fis	hupB	1
+fis	lpd	1
+fis	mtlA	1
+leuO	cadC	1
+pdhR	lpd	1

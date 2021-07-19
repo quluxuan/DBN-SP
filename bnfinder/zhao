@@ -1,0 +1,95 @@
+import xlrd
+from openpyxl import load_workbook
+import numpy as np
+if __name__== '__main__':
+    rr = xlrd.open_workbook("D:/Ecoli/IEEEaccess/bd/gs.xlsx")
+    rr1 = rr.sheets()[0]
+    relation=[]
+    for i in range(0, rr1.nrows):
+        value1 = rr1.cell_value(i, 0)
+        value2 = rr1.cell_value(i, 1)
+        value3 = rr1.cell_value(i, 2)
+        regene = value1.encode('unicode-escape').decode('string_escape')
+        # ii = value3.encode('unicode-escape').decode('string_escape')
+        tagene = value2.encode('unicode-escape').decode('string_escape')
+        relation.append([regene,tagene])
+
+
+    g100 = xlrd.open_workbook("D:/Ecoli/IEEEaccess/bd/zhao100.xlsx")
+    g100 = g100.sheets()[0]
+    ge100=[]
+    for i in range(0, g100.nrows):
+        value1 = g100.cell_value(i, 0)
+        gene = value1.encode('unicode-escape').decode('string_escape')
+        ge100.append(gene)
+
+
+    g150 = xlrd.open_workbook("D:/Ecoli/IEEEaccess/bd/zhao150.xlsx")
+    g150 = g150.sheets()[0]
+    ge150=[]
+    for i in range(0, g150.nrows):
+        value1 = g150.cell_value(i, 0)
+        gene = value1.encode('unicode-escape').decode('string_escape')
+        ge150.append(gene)
+
+
+    g200 = xlrd.open_workbook("D:/Ecoli/IEEEaccess/bd/zhao200.xlsx")
+    g200 = g200.sheets()[0]
+    ge200=[]
+    for i in range(0, g200.nrows):
+        value1 = g200.cell_value(i, 0)
+        gene = value1.encode('unicode-escape').decode('string_escape')
+        ge200.append(gene)
+
+
+
+    g250 = xlrd.open_workbook("D:/Ecoli/IEEEaccess/bd/zhao250.xlsx")
+    g250 = g250.sheets()[0]
+    ge250=[]
+    for i in range(0, g250.nrows):
+        value1 = g250.cell_value(i, 0)
+        gene = value1.encode('unicode-escape').decode('string_escape')
+        ge250.append(gene)
+
+
+
+    g300 = xlrd.open_workbook("D:/Ecoli/IEEEaccess/bd/zhao300.xlsx")
+    g300 = g300.sheets()[0]
+    ge300=[]
+    for i in range(0, g300.nrows):
+        value1 = g300.cell_value(i, 0)
+        gene = value1.encode('unicode-escape').decode('string_escape')
+        ge300.append(gene)
+
+    ge300num=0
+    for relat in relation:
+        if relat[0] in ge300 and relat[1] in ge300:
+                    ge300num += 1
+    print 'ge300num:',ge300num
+
+
+    ge250num=0
+    for relat in relation:
+        if relat[0] in ge250 and relat[1] in ge250:
+            ge250num += 1
+    print 'ge250num:',ge250num
+
+    ge200num=0
+    for relat in relation:
+        if relat[0] in ge200 and relat[1] in ge200:
+            ge200num += 1
+    print 'ge200num:',ge200num
+
+    ge150num=0
+    for relat in relation:
+        if relat[0] in ge150 and relat[1] in ge150:
+            ge150num += 1
+    print 'ge150num:',ge150num
+
+    ge100num=0
+    for relat in relation:
+        if relat[0] in ge100 and relat[1] in ge100:
+            ge100num = ge100num+1
+    print 'ge100num:',ge100num
+    ashole=900
+    ashole=900
